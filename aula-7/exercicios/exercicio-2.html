@@ -1,0 +1,38 @@
+<!-- # Exercício 2
+
+- Crie uma nova página HTML
+- A página deverá conter texto
+- No topo da página, adicione dois botões: + e -
+- Ao clicar no botão + o tamanho da fonte deverá aumentar
+- Ao clicar no botão - o tamanho da fonte deverá ser reduzido -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="button-container"></div>
+        <button onclick="mudarFonte('incremento')">+</button>
+        <button onclick="mudarFonte('decremento')">-</button>
+    </div>
+    <p id="texto">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore, earum fuga. Reiciendis, atque repellendus. Quasi asperiores totam earum iste ab officia ex quis, eum perspiciatis ut enim quod, consequuntur facilis esse expedita architecto pariatur accusantium corporis numquam quos. Animi inventore, distinctio ducimus optio culpa eveniet rerum consequatur eaque omnis voluptates minima. Fugiat provident accusantium nisi nesciunt iusto rem reprehenderit dolor consequatur laboriosam dicta quae distinctio tempora rerum beatae dolorem expedita culpa quia ipsum, cum eveniet hic incidunt voluptatem. Saepe enim rem, dolores dolorem nemo aliquid quia accusamus commodi beatae inventore quis harum ullam neque, soluta eius veritatis quibusdam maxime mollitia.</p>
+
+
+    <script>
+        function mudarFonte(action) {
+            const textElement = document.getElementById('texto');
+            const currentSize = window.getComputedStyle(textElement).fontSize;
+            const sizeValue = parseFloat(currentSize);
+
+            if (action === 'incremento') {
+                textElement.style.fontSize = (sizeValue + 1) + 'px';
+            } else if (action === 'decremento') {
+                textElement.style.fontSize = (sizeValue - 1) + 'px';
+            }
+        }
+    </script>
+</body>
+</html>
